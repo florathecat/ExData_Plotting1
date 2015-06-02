@@ -26,12 +26,12 @@ axis(1, c("Thu", "Fri", "Sat"), at=c(min(dates), dates[which(dates=="2007-02-02 
 #somehow I don't have to set x axis marking any more after setting it once.
 plot(dates, hpc2$Voltage, xlab="datetime", ylab="Voltage", type="l")
 
-plot(dates, hpc2$Sub_metering_1, type="l", xlab="datetime", ylab="Energy sub metering")
+plot(dates, hpc2$Sub_metering_1, type="l", xlab=NA, ylab="Energy sub metering")
 lines(dates, hpc2$Sub_metering_2, type="l", col="red")
 lines(dates, hpc2$Sub_metering_3, type="l", col="blue")
 #there is no border--> set legend border by "bty"; also reduce the legend size
 legend("topright", names(hpc2)[7:9], lty=1, col=c("black", "red", "blue"), bty="n", cex=0.8)
 
-plot(dates, hpc2$Global_reactive_power, type="l", xlab="datetime", ylab="Global reactive power")
+plot(dates, hpc2$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 
 dev.off()
